@@ -1,6 +1,3 @@
-# Prerequisites
-*.dSYM/
-
 # Compiled Object files
 *.o
 *.obj
@@ -9,3 +6,6 @@
 *.exe
 *.out
 *.app
+
+## Obj-C/Swift specific
+*.dSYM
