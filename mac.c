@@ -48,7 +48,7 @@ int instruction_space = 4;
 /** program running status */
 static bool running = true;
 
-/** program counter assignment status **/
+/** program counter assignment status */
 bool is_jmp = false;
 
 /** special registers access */
@@ -235,7 +235,7 @@ int main(int argc, char **argv) {
     // allocating space for instructions
     instructions = malloc(sizeof(*instructions) * instruction_space);
     
-    // reading the binary file
+    // reading input file
     int num;
     int i = 0;
     while (fscanf(file, "%d", &num) > 0) {
