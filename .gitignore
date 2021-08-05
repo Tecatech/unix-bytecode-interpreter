@@ -1,0 +1,11 @@
+# Prerequisites
+*.dSYM/
+
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
