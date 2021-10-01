@@ -36,10 +36,10 @@ typedef enum {
 
 static int registers[REGISTER_SIZE];
 
-// instructions array
+// instruction array
 int *instructions;
 
-// instructions counter
+// instruction counter
 int instruction_count = 0;
 
 // allocation space
@@ -51,7 +51,7 @@ static bool running = true;
 /** program counter assignment status */
 bool is_jmp = false;
 
-/** special registers access */
+/** special register access */
 #define SP (registers[SP])
 #define IP (registers[IP])
 
@@ -248,7 +248,7 @@ int main(int argc, char **argv) {
         }
     }
     
-    // setting the instructions counter to the number of processed instructions
+    // setting the instruction counter to the number of processed instructions
     instruction_count = i;
     
     // closing input file
