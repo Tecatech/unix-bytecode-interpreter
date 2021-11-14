@@ -1,1 +1,1 @@
-# Custom bytecode interpreter implementation
+# Custom bytecode interpreter
