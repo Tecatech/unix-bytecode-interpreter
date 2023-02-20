@@ -7,21 +7,21 @@ static int stack[STACK_SIZE];
 
 /** Instructions */
 typedef enum {
-    HLT, // 0  -- hlt           :: halts the program
+    HLT, // 0  -- hlt           :: halts program
     PSH, // 1  -- psh val       :: pushes <val> to the stack
-    POP, // 2  -- pop rm        :: pops the value off the stack
+    POP, // 2  -- pop rm        :: pops value off the stack
     ADD, // 3  -- add rm, rn    :: adds two values from the stack
     MUL, // 4  -- mul rm, rn    :: multiplies two values from the stack
     DIV, // 5  -- div rm, rn    :: divides two values from the stack
     SUB, // 6  -- sub rm, rn    :: subtracts two values from the stack
-    SLT, // 7  -- slt rm, rn    :: pushes the register with the smallest value to the stack
-    MOV, // 8  -- mov rm, rn    :: moves the value from the source register to the destination register
-    SET, // 9  -- set rm, val   :: sets the register to <val>
+    SLT, // 7  -- slt rm, rn    :: pushes register with the smallest value to the stack
+    MOV, // 8  -- mov rm, rn    :: moves value from source register to destination register
+    SET, // 9  -- set rm, val   :: sets register to <val>
     LOG, // 10 -- log val       :: prints out <val>
-    IF,  // 11 -- if  rm val ip :: branches to the specified instruction if the register value equals <val>
-    IFN, // 12 -- ifn rm val ip :: branches to the specified instruction if the register value doesn't equal <val>
-    GLD, // 13 -- gld rm        :: loads the register to the stack
-    GPT, // 14 -- gpt rm        :: pushes the top of the stack to the register
+    IF,  // 11 -- if  rm val ip :: branches to specified instruction if register value equals <val>
+    IFN, // 12 -- ifn rm val ip :: branches to specified instruction if register value doesn't equal <val>
+    GLD, // 13 -- gld rm        :: loads register to the stack
+    GPT, // 14 -- gpt rm        :: pushes the top of the stack to register
     NOP  // 15 -- nop           :: nothing
 } Instructions;
 
@@ -248,16 +248,16 @@ int main(int argc, char **argv) {
         }
     }
     
-    // setting the instruction counter to the number of processed instructions
+    // setting instruction counter to number of processed instructions
     instruction_count = i;
     
     // closing input file
     fclose(file);
     
-    // initializing the stack pointer
+    // initializing stack pointer
     SP = -1;
     
-    // looping through the program
+    // looping through program
     while (running && IP < instruction_count) {
         eval(FETCH);
         if (!is_jmp){
@@ -265,7 +265,7 @@ int main(int argc, char **argv) {
         }
     }
     
-    // cleaning up the program
+    // cleaning up program
     free(instructions);
     
     return 0;
